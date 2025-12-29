@@ -3,7 +3,7 @@ class BankAccount(val accountNumber : String , var ownerName : String , var bala
         balance += amount
     }
     fun witdhraw(amount : Double){
-        if (amount>balance && amount > 0.0){
+        if (amount>balance || amount > 0.0){
             println(" Solde insuffisant !!")
         }else{
             balance -= amount
@@ -13,16 +13,6 @@ class BankAccount(val accountNumber : String , var ownerName : String , var bala
         println("Account Number: $accountNumber")
         println("Owner: Mr/Ms $ownerName")
         println("Balance: $balance DH ")
-    }
-    fun addCompteBank(cp : BankAccount){
-        var lisCompteBank : MutableList<BankAccount> = mutableListOf()
-        for (elm in lisCompteBank){
-            if(elm.accountNumber == cp.accountNumber){
-                println(" Ce Copmte deja exist !!")
-            }else{
-                lisCompteBank.add(elm)
-            }
-        }
     }
 }
 fun main() {
